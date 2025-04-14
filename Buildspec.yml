@@ -4,12 +4,12 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 816069135163.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 816069135163.dkr.ecr.us-east-1.amazonaws.com
   build:
     commands:
       - echo Build started on `date`
-      - docker build -t gangwar-ecr-repo .
-      - docker tag gangwar-ecr-repo:latest 816069135163.dkr.ecr.us-east-1.amazonaws.com/singha3-codepipeline-ecr-repo:latest
+      - docker build -t singha3-codepipeline-ecr-repo .
+      - docker tag singha3-codepipeline-ecr-repo:latest 816069135163.dkr.ecr.us-east-1.amazonaws.com/singha3-codepipeline-ecr-repo:latest
   post_build:
     commands:
       - echo Build completed on `date`
