@@ -9,10 +9,10 @@ phases:
     commands:
       - echo Build started on `date`
       - docker build -t gangwar-ecr-repo .
-      - docker tag gangwar-ecr-repo:latest 816069135163.dkr.ecr.us-east-1.amazonaws.com/singha3-ecr-repo:latest
+      - docker tag gangwar-ecr-repo:latest 816069135163.dkr.ecr.us-east-1.amazonaws.com/singha3-codepipeline-ecr-repo:latest
   post_build:
     commands:
       - echo Build completed on `date`
-      - docker push 816069135163.dkr.ecr.us-east-1.amazonaws.com/singha3-ecr-repo:latest
+      - docker push 816069135163.dkr.ecr.us-east-1.amazonaws.com/singha3-codepipeline-ecr-repo:latest
 artifacts:
   files: '**/*'
